@@ -6,8 +6,20 @@
   "dependencies": {
     "jovo-framework": "<=1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-cli": "~6.26.0",
+    "babel-preset-env": "~1.6.1",
+    "ngrok": "~2.2.23",
+    "nodemon": "~1.12.1"
+  },
   "scripts": {
+    "build": "babel --source-maps --ignore ./webhook.js --out-dir dist app",
+    "watch": "npm run build -- --watch",
+    "start": "nodemon --ignore dist --exec 'npm run build; node ./webhook.js'",
+    "tunnel": "ngrok http 3000",
+    "zip": "npm run zip-alexa && npm run zip-google",
+    "zip-alexa": "npm run build && zip -rq alexa-skill.zip dist node_modules index.js package.json",
+    "zip-google": "npm run build && zip -rq google-action.zip dist index.js package.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +31,17 @@
   "bugs": {
     "url": "https://github.com/jovotech/jovo-sample-voice-app-nodejs/issues"
   },
-  "homepage": "https://github.com/jovotech/jovo-sample-voice-app-nodejs#readme"
+  "homepage": "https://github.com/jovotech/jovo-sample-voice-app-nodejs#readme",
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "6.10"
+          }
+        }
+      ]
+    ]
+  }
 }

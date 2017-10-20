@@ -1,1 +1,4 @@
 node_modules/
+dist/
+alexa-skill.zip
+google-action.zip

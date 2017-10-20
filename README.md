@@ -1,9 +1,24 @@
+[![Jovo Framework](https://www.jovo.tech/downloads/jovo-header.png)](https://www.jovo.tech)
+
 # Sample Voice App for Jovo
 
-[Jovo](https://www.jovo.tech "Jovo's website") is a framework for voice developers to create cross-platform apps. Use this repository as a starting point to create a voice application for Amazon Alexa and Google Home.
+<p>
+<a href="https://github.com/jovotech/jovo-framework-nodejs/"><strong>Framework Repository</strong></a> -
+<a href="https://github.com/jovotech/jovo-cli"><strong>CLI</strong></a> -
+<a href="https://www.jovo.tech/framework/docs/"><strong>Documentation</strong></a> -
+<a href="https://www.jovo.tech/learn/"><strong>Courses</strong></a> -
+<a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
+<br/>
 
-You can find an early version of the documentation [here](https://docs.google.com/document/d/1SN_M-kS76Yz6B5pfMFrlYtM-ly2l10aZce3ULrZJztw/edit?usp=sharing "Jovo Docs"). You can also use the ["Get Started"](https://www.jovo.tech/get-started "Jovo Framework Quickstart Guide") guide on jovo.tech.
+[Jovo](https://www.jovo.tech "Jovo's website") is a development framework for cross-platform voice apps. Use this repository as a starting point to create a voice application for Amazon Alexa and Google Assistant.
 
+> 🚀 Join our newsletter for free courses on voice app development: www.jovo.tech/newsletter
+
+## Table of Contents
+
+* [Getting Started](#getting-started)
+* [Tutorials](#tutorials)
+* [How to Contribute](#how-to-contribute)
 
 
 ## Getting Started
@@ -46,7 +61,7 @@ For local development and debugging, we recommend using a webhook and a tunnel s
 
 ### Step 3: Run local development server
 
-If you're using the webhook version (index.js), you can run a local development server with the following command: 
+If you're using the webhook version (index.js), you can run a local development server with the following command:
 
 ```
 $ node index.js
@@ -162,7 +177,7 @@ Here are other tools that can be used to test your skill: [Reverb](https://rever
 
 
 ### Step 5: "Hello World" on Google Home
-There are several possibilities to set up an Action for Google Home/Google Assistant. We recommend using API.AI for the first simple steps. 
+There are several possibilities to set up an Action for Google Home/Google Assistant. We recommend using API.AI for the first simple steps.
 
 If it's your first time to set up a project for Google Assistant, [here's a tutorial](https://developers.google.com/actions/apiai/tutorials/getting-started),
 
@@ -189,10 +204,15 @@ Activate test status in the Simulator. Make sure to use the right invocation (th
 ![Using the Simulator to test your Google Action](https://www.jovo.tech/img/get-started/google-test.jpg "Jovo Test with Google Assistant")
 
 
-## What else can I do with Jovo?
+## Tutorials
 
-Jovo is still in early beta, so we're still improving and appreciate any feedback!
-You can find a reference to all Jovo functions [here](https://www.jovo.tech/framework/docs/).
+Find a quickstart guide and comprehensive tutorials here:
 
-## We need your help
+* [Build a cross-platform voice app in 5 simple steps](https://www.jovo.tech/get-started)
+* [Build an Alexa Skill with Jovo](https://www.jovo.tech/blog/alexa-skill-tutorial-nodejs/)
+* [Build a Google Action with Jovo](https://www.jovo.tech/blog/google-action-tutorial-nodejs/)
+
+
+
+## How to Contribute
 Jovo is a free, open source framework for voice developers. We're improving it every day and appreciate any feedback. How to support us? Just go ahead and build something cool with the framework and let us know at feedback@jovo.tech. Thanks!
