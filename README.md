@@ -34,11 +34,21 @@ $ git clone https://github.com/jovotech/jovo-sample-voice-app-nodejs.git
 ```
 
 This repository includes
-* index.js, a "Hello World" template for local development
-* index_lambda.js, a "Hello World" template for AWS Lambda
-* /assets, a folder with files to easily configure your projects on Amazon and API.AI
-* package.json, including dependencies for the jovo-framework package
 
+```js
+app/
+  ├── handlers/
+  │   ├── HelloWorldIntent.js // a "Hello World" intent
+  │   ├── Launch.js // The launch request (LaunchRequest (Alexa) and Default Welcome Intent (Dialogflow/API.AI))
+  │   └── index.js // imports all the handlers and creates the handlers object
+  ├── index.js // The base code for the app
+  └── package.json // including dependencies for the jovo-framework package
+assets/
+  ├── ALEXA_IntentSchema.json // the alexa intent schema
+  └── Dialogflow_JovoSampleVoiceApp.zip // the Dialogflow data
+webhook.js // imports the compiled app from `dist/index.js` and runs it as a webhook
+package.json // including dependencies for the jovo-framework package
+```
 
 Use node package manager to install the dependencies ([jovo-framework](https://www.npmjs.com/package/jovo-framework "Jovo NPM Package")):
 
@@ -47,40 +57,17 @@ $ npm install
 ```
 
 
-### Step 2: Configure index.js
+### Step 2: Configure `app/index.js`
 
-The index.js file, especially the handlers variable, is where your app's logic is happening. At this point, you don't need to change anything, but it's helpful to have a quick look at how the file is structured.
-
-You can run this template in two ways:
-* Webhook (stick to the index.js)
-* AWS Lambda (use the index_lambda.js and rename it to index.js)
-
-For local development and debugging, we recommend using a webhook and a tunnel service like ngrok (see next step). If you wish to run your app as a Lambda function, you can use the index_lambda.js and rename it to index.js.)
-
+The `app/index.js` file, is where your app's logic is coming together to run. The `app/handlers` folder is where all you handlers are located.
 
 
 ### Step 3: Run local development server
 
-If you're using the webhook version (index.js), you can run a local development server with the following command:
-
-```
-$ node index.js
-
-// It should return this:
-Local development server listening on port 3000.
-```
-
-#### Use ngrok to create a link to your local webhook
-
-The problem with running your code locally is that it is not accessible from the outside. This is where [ngrok](https://www.ngrok.com) comes into play. It's a tunneling service that points to your localhost to create an accessible web service. If you don't have ngrok yet, you can install it globally via npm:
-
-```
-// Open a new tab in your command line tool, then:
-$ npm install ngrok -g
-
-// Point ngrok to your localhost:3000
-$ ngrok http 3000
-```
+You can run this template in 3 ways:
+  - You can run a webhook by running `npm start`. This will build your assets into a `dist` folder and then run your app by running `webhook.js`
+  - AWS Lambda (`dist` folder)
+  - Local development and debugging run it as a proxy by running `npm run tunnel`. This will run [ngrok](https://www.ngrok.com). It's a tunneling service that points to your localhost to create an accessible web service.
 
 Use the secure link and add "/webhook" to it, as shown below.
 
