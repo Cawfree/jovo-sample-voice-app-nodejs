@@ -13,5 +13,5 @@ webhook.listen(3000, function() {
 });
 
 webhook.post('/webhook', function(req, res) {
-  app(req, res);
+  app.handler(req, res);
 });
